@@ -1,0 +1,14 @@
+$orange-color: rgba(236, 89, 55, 1);
+$green-color: rgba(128, 187, 0, 1);
+$text-color: rgba(78, 48, 0, 1);
+$green-color-btn: rgba(76, 175, 80, 1);
+$gray-color-btn: rgba(115, 115, 115, 1);
+$box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.16);
+
+:export {
+  greenColor: $green-color-btn;
+  grayColor: $gray-color-btn;
+  orangeColorMark: $orange-color;
+  greenColorMark: $green-color;
+}
+

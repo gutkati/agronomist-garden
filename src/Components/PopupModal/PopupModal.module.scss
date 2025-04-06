@@ -1,0 +1,107 @@
+@import "../../styles/variables";
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  width: 1461px;
+  height: 581px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 30px;
+  @include flex;
+  margin-top: 360px;
+  position: relative;
+
+  & .btn__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  & .form {
+    @include flex;
+    flex-direction: column;
+    width: 780px;
+    margin-left: 150px;
+
+    & label {
+      font-size: 32px;
+      font-weight: 600;
+      color: $text-color;
+    }
+  }
+
+  & .container__input {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 10px 0 40px;
+
+
+    & .input {
+      width: 502px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      position: relative;
+    }
+
+    & .checkbox {
+      width: 502px;
+    }
+
+    & select {
+      width: 502px;
+      height: 52px;
+      padding: 0 30px;
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.16);
+      border: none;
+      border-radius: 5px;
+      font-size: 30px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url('../../images/arrow-dropdown.png');
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+      background-size: 16px;
+      cursor: pointer;
+    }
+
+    & .label {
+      position: absolute;
+      left: 0;
+      bottom: -25px;
+      color: #ff374b;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  & .container__btn {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+}

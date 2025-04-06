@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header/Header";
+import Main from "./Components/Main/Main";
+import "./styles/index.scss"
+import React, {useState} from "react";
+import {useUsers} from "./Context/UserContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {users} = useUsers()
+    const [searchName, setSearchName] = useState("")
+    const [searchCompany, setSearchCompany] = useState("")
+    let filtered = [...users]
+    if (searchName) {
+        filtered = filtered.filter(user =>
+            user.name.includes(searchName)
+        )
+    }
+
+    if (searchCompany) {
+        filtered = filtered.filter(user =>
+            user.company.includes(searchCompany)
+        )
+    }
+
+    return (
+            <div className="app">
+                <Header
+                    searchName={searchName}
+                    setSearchName={setSearchName}
+                    searchCompany={searchCompany}
+                    setSearchCompany={setSearchCompany}
+                />
+                <Main users={filtered}/>
+            </div>
+    );
 }
 
 export default App;

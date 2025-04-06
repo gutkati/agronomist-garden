@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  height: 59px;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 30px;
+  cursor: pointer;
+
+  td:nth-child(1) {
+    width: 220px;
+  }
+
+  td:nth-child(2) {
+    width: 510px;
+  }
+
+  td:nth-child(3) {
+    width: 400px;
+  }
+
+  td:nth-child(4) {
+    width: 660px;
+  }
+
+  td:nth-child(5) {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.mark__circle {
+  width: 59px;
+  height: 59px;
+  border-radius: 50%;
+  align-self: center;
+}

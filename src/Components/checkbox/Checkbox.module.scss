@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+/* Контейнер для чекбокса */
+.checkbox__container {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Скрываем стандартный чекбокс */
+.checkbox__container input[type="checkbox"] {
+  display: none;
+}
+
+/* Стиль для кастомного чекбокса */
+.check__mark {
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 1);
+  position: relative;
+  transition: background-color 0.3s;
+  border-radius: 3px;
+  border: 2px solid rgba(117, 117, 117, 1);
+}
+
+/* Иконка галочки */
+.check__mark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 3px;
+  width: 9px;
+  height: 16px;
+  border: solid $green-color-btn;
+  border-width: 0 2px 2px 0;
+  transform: rotate(40deg);
+}
+
+/* Показываем галочку, если чекбокс выбран */
+.checkbox__container input[type="checkbox"]:checked + .check__mark::after {
+  display: block;
+}
+
+//.check__mark:hover {
+//  box-shadow: 0 0 5px #3D1B62;
+//}

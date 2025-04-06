@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.button {
+  border: none;
+  width: 273px;
+  height: 52px;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
